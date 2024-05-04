@@ -1,0 +1,93 @@
+@import "~/src/scss/index.scss";
+
+.gallery {
+  display: flex;
+  flex-direction: column !important;
+
+  @include medium {
+    flex-direction: row !important;
+  }
+}
+
+.principal {
+  padding-right: 10px;
+
+  @include medium {
+    width: 50%;
+  }
+
+  img {
+    border-radius: 16px;
+    height: 100%;
+    object-fit: cover;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  }
+}
+
+.grid {
+  width: 79%;
+  display: grid;
+  margin-top: 1rem;
+  gap: 1rem;
+  padding-left: 2rem;
+  @include medium {
+    width: 50%;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 10px;
+  }
+
+  .item {
+    img {
+      border-radius: 16px;
+
+      &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.carrousel{
+  height: 100%;
+
+  > div{
+    height: 100%;
+
+    > div{
+      width: 80%;
+      height: calc(100% - 200px);
+      margin: 0 auto;
+      border-radius: 20px;
+      margin-top: 2rem;
+    }
+  }
+.dots{
+  display: flex !important;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100px;
+
+  > li{
+    height: 100%;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+
+    img{
+      border-radius: 10px;
+
+      &:hover{
+        opacity: 0.6;
+        cursor: pointer;
+      }
+    }
+  }
+}
+}

@@ -1,0 +1,34 @@
+@import "~/src/scss/index.scss";
+
+
+.stepTwo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px !important;
+
+    @include medium{
+        flex-direction: row;
+    }
+}
+
+
+.center{
+    padding-right: 20px;
+    @include medium{
+        width: 65%;
+
+    }
+
+}
+
+.right{
+
+    margin-top: 20px  !important;
+    @include medium{
+        width: 35%;
+        padding-left: 20px;
+        margin-top: 0 !important;
+
+    }
+}

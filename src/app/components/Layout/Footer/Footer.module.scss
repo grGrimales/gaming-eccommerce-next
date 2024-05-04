@@ -1,0 +1,59 @@
+@import "~/src/scss/index.scss";
+
+.footer {
+  background-color: $background-tertiary;
+  padding: 30px 0;
+  animation-name: fadeIn;
+  animation-duration: 1s; /* Duración de 1 segundo */
+  animation-fill-mode: both; /* Mantiene el estado final después de completar la animación */
+}
+
+.columns {
+  display: flex !important;
+  justify-content: space-between;
+  > div {
+    width: 33.33%;
+
+    > a > img {
+      width: 150px;
+    }
+
+    > ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0;
+      margin: 0;
+    }
+
+    &.social {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      > a {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+.copyright{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid $border-primary;
+
+    > span {
+        color: $text-secondary;
+    }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

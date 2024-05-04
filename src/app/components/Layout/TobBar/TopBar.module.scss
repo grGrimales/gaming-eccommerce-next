@@ -1,0 +1,54 @@
+@import "~/src/scss/index.scss";
+
+.topBar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  z-index: 5;
+  justify-content: space-between;
+
+    animation-name: fadeIn;
+    animation-duration: 1s; /* Duración de 1 segundo */
+    animation-fill-mode: both; /* Mantiene el estado final después de completar la animación */
+
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.left {
+  align-self: flex-start;
+  @include medium {
+    align-self: center;
+    width: 20%;
+  }
+  img {
+    height: 30px;
+  }
+}
+
+.center {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

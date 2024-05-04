@@ -1,0 +1,154 @@
+@import "~/src/scss/index.scss";
+
+.headerCart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  z-index: 5;
+  background-color: $background-tertiary;
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.left {
+  width: 20%;
+  align-self: flex-start;
+   img {
+    height: 30px;
+  }
+}
+
+.center {
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+
+  @include medium {
+    width: 60%;
+    margin-top: 0;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    width: 52%;
+
+    @include medium {
+      width: 100%;
+    }
+
+    &.active {
+      span {
+        color: $text-primary;
+      }
+      .number {
+        border-color: $primary;
+      }
+    }
+
+    &.success {
+      .number {
+        border-color: $primary;
+        color: $primary;
+        background-color: $primary;
+      }
+
+      i {
+        display: flex;
+        position: absolute;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .space {
+        background-color: $primary;
+      }
+    }
+
+    span {
+      color: $text-secondary;
+    }
+
+    .number {
+      border: 3px solid $border-primary;
+      font-size: 12px;
+      border-radius: 100px;
+      width: 62px;
+      height: 23px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      padding-right: 1px;
+      padding-top: 1px;
+      margin-right: 10px;
+
+
+      @include medium {
+        width: 26px;
+      height: 26px;
+      }
+
+      i {
+        display: none;
+      }
+    }
+
+    .space {
+      width: 100px;
+      height: 3px;
+      background-color: $border-primary;
+      margin-right: 20px;
+      margin-left: 15px;
+    }
+    &:last-of-type .space {
+      display: none;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+
+    @include medium {
+        width: 20%;
+        margin-top: 0;
+    }
+
+  .icon {
+    color: $success;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  .right__pago {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid $border-primary;
+    padding-left: 10px;
+
+    span {
+      &:first-of-type {
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      &:last-of-type {
+        font-size: 11px;
+        color: $text-secondary;
+        margin-top: -4px;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "./index.scss";
+@import "./index.scss";
+@import "./semantic-ui/index.scss";
+
+*{
+    color: $text-primary;
+}
+
+body{
+    margin: 0;
+    background-color: $background-primary;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: $text-primary;
+    
+    &:hover{
+        color: $primary;
+    }
+}
+
+.containerNotFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    flex-direction: column;
+
+    @include medium{
+        margin-top: 0 !important;
+    
+    }
+
+    p{
+        color: $text-secondary;
+        margin-bottom: 15px !important;
+    }
+    
+       > i{
+            font-size: 70px;
+            color: $success;
+        }
+    
+        h2{
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+    
+        a{
+            width: 300px;
+        }
+
+}
+

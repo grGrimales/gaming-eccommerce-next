@@ -1,0 +1,27 @@
+
+@import "~/src/scss/index.scss";
+
+.container_game{
+padding: 2rem;
+transition: all 0.3s ease-in-out;
+animation-name: fadeIn;
+animation-duration: 1s; /* Duración de 1 segundo */
+animation-fill-mode: both;
+    @include medium{
+        padding: 5rem;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.elementoFadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s; /* Duración de 1 segundo */
+    animation-fill-mode: both; /* Mantiene el estado final después de completar la animación */
+}

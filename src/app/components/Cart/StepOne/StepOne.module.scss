@@ -1,0 +1,29 @@
+@import "~/src/scss/index.scss";
+
+.StepOne {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 20px !important;
+  height: 100vh;
+
+
+  @include medium {
+    flex-direction: row;
+  }
+
+  .center {
+
+    @include medium {
+      width: 65%;
+      padding-right: 20px;
+    }
+  }
+
+  .right {
+    padding-left: 20px;
+    @include medium {
+      width: 35%;
+    }
+  }
+}

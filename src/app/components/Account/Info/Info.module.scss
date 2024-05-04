@@ -1,0 +1,55 @@
+@import "~/src/scss/index.scss";
+
+.info{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 70px;
+animation-name: fadeIn;
+animation-duration: 1s; /* Duración de 1 segundo */
+animation-fill-mode: both; /* Mantiene el estado final después de completar la animación */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.user{
+    background-color: $background-quaternary;
+    border-radius: 20px !important;
+    margin: 0 !important;
+    cursor: auto !important;
+    height: 100px;
+    width: 100px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px !important;
+
+
+    i{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+    }
+}
+
+.username{
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.email{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.createdAt{
+    font-size: 12px;
+    color: $text-secondary;
+}

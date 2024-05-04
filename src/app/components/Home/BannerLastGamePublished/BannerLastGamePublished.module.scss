@@ -1,0 +1,69 @@
+
+@import "~/src/scss/index.scss";
+
+.container{
+    position: relative;
+    height: 600px;
+    transition: all 0.3s ease-in-out;
+        animation-name: fadeIn;
+        animation-duration: 1s; /* Duración de 1 segundo */
+        animation-fill-mode: both; /* Mantiene el estado final después de completar la animación */
+    
+
+    &::after{
+        content: "";
+        background-color: $background-primary;
+        position: absolute;
+        bottom: -1px;
+        height: 60px;
+        width: 100%;
+        clip-path: polygon(0 100%, 100% 100%, 0 0 );
+    }
+}
+
+.wallpaper{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.infoContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .date{
+        font-size: 12px;
+        color: $primary;
+        font-weight: bold;
+    }
+
+    h2{
+        margin: 5px 0 20px 0 !important;
+    }
+
+    .price{
+        display: flex;
+        align-items: center;
+    }
+
+    .finalPrice{
+     margin-left: 65px;
+     font-size: 30px;   
+    }
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

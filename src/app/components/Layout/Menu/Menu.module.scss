@@ -1,0 +1,123 @@
+@import "~/src/scss/index.scss";
+
+
+.platforms{
+    position: relative;
+    background-color: $background-quaternary_blur;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    padding: 5px 4px;
+    border-radius: 100px 0 0 100px;
+    transition: all 0.3s ease-in-out;
+
+    @include medium{
+        margin-top: 0;
+    padding: 10px 20px;
+
+    }
+
+
+    > a{
+        display: flex;
+        align-items: center;
+        padding: 5px 15px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+
+        @include medium{
+            padding: 20px 10px;
+            flex-direction: row;
+        }
+
+        &:last-of-type{
+            margin-right: 14px;
+        }
+    }
+
+    img{
+        filter: brightness(0) invert(1);
+        height: 16px;
+        padding-right: 10px;
+    }
+}
+
+.search{
+    position: absolute;
+    top: 52px;
+    right: 0;
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    height: 61%;
+    width: 51px;
+    border: 0;
+
+    &:hover{
+        background-color: $primary_hover;
+        cursor: pointer;
+    }
+    @include medium{
+        top: 6px;
+        right: -30px;
+        height: 77%;
+        width: 60px;
+    }
+
+     i{
+        margin: 0;
+        font-size: 18px;
+    }
+}
+
+.inputContainer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: $primary;
+    border-radius: 100px;
+    display: none;
+
+    &.active{
+        display: flex;
+        width: calc(100% + 30px);
+    }
+
+    .input{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 100px;
+
+        > input{
+            background-color: $primary !important;
+            border : 0 !important;
+            color: $text_primary !important;
+            font-size: 16px;
+            padding: 10px 30px;
+
+            &::placeholder{
+                color: $text_primary !important;
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+.closeInput{
+    position: absolute;
+    top: 0;
+    right: -30px;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    font-size: 20px;
+}

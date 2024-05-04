@@ -1,0 +1,11 @@
+.ui.button.primary {
+  background-color: $primary;
+  color: $text-primary;
+  margin: 0;
+  padding: 15.5px 30px;
+  &:hover,
+  &:active,
+  &:focus {
+   background-color: $primary-hover;
+  }
+}

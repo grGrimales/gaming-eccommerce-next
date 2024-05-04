@@ -1,0 +1,35 @@
+.tabs{
+    position: relative;
+    margin-top: 50px;
+    animation-name: fadeIn;
+    animation-duration: 1s; /* Duración de 1 segundo */
+    animation-fill-mode: both; /* Mantiene el estado final después de completar la animación */
+    > div{
+        > a{
+            &:last-of-type{
+                position: absolute !important;
+                right: 0;
+            }
+
+            &:nth-last-of-type(2){
+                position: absolute !important;
+                right: 46px;
+            }
+        }
+    }
+}
+
+.containerForms{
+    display: flex;
+    margin: 0 -10px;
+    margin-top: 50px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

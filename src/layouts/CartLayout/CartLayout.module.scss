@@ -1,0 +1,15 @@
+.contentCard{
+    height: 100vh;
+    animation-name: fadeIn;
+    animation-duration: 1s; /* Duración de 1 segundo */
+    animation-fill-mode: both; /* Mantiene el estado final después de completar la animación */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,21 @@
+@import "~/src/scss/index.scss";
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  a{
+    i{
+        margin-left: 18px !important;
+    }
+  }
+
+ 
+}
