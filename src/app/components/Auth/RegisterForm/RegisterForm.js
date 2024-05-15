@@ -38,12 +38,12 @@ export function RegisterForm() {
           error={formik.errors.email}
         />
         <Form.Input
-          name="username"
+          name="userName"
           type="text"
           placeholder="Name"
-          value={formik.values.username}
+          value={formik.values.userName}
           onChange={formik.handleChange}
-          error={formik.errors.username}
+          error={formik.errors.userName}
         />
       </Form.Group>
       <Form.Group widths="equal">

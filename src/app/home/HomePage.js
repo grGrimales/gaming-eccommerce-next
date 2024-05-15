@@ -6,8 +6,8 @@ import { Separator } from "../components/Shared/Separator/Separator";
 import { Container } from "semantic-ui-react";
 import styles from "./HomePage.module.scss";
 import { BannerAd, BarTrust } from "../components/Shared";
-import { Loading } from "../components/Shared/Loading/Loading";
 import { Suspense } from "react";
+import Loading from "../components/Shared/Loading/Loading";
 
 const platformsId = {
   playstation: 1,

@@ -45,12 +45,13 @@ export function AuthProvider(props) {
     }
   };
 
-  const login = async (token) => {
+  const login = async (token, user) => {
     try {
+      console.log("login Auth Context", token, user);
       tokenCtrl.setToken(token);
-      const response = await userCtrl.getMe();
-      setUser(response);
-      localStorage.setItem("user", JSON.stringify(response));
+     // const response = await userCtrl.getMe();
+      setUser(user);
+      localStorage.setItem("user", JSON.stringify(user));
       setToken(token);
       setLoading(false);
     } catch (error) {

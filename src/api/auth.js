@@ -4,7 +4,7 @@ import {ENV} from '@/utils';
 export class Auth{
     async register(data){
         try {
-            const url = `${ENV.API_URL}${ENV.ENDPOINTS.AUTH.REGISTER}`;
+            const url = `${ENV.API_URL_TEMPORAL}${ENV.ENDPOINTS.AUTH.REGISTER}`;
             const params = {
                 method: 'POST',
                 headers: {
@@ -15,7 +15,7 @@ export class Auth{
 
             const response = await fetch(url, params);
             const result = await response.json();
-            if(response.status != 200 ) throw result;
+            if(result.status != 200 ) throw result;
             return result;
         } catch (error) {
         console.log(error);
@@ -27,7 +27,7 @@ export class Auth{
 
     async login(data){
         try {
-            const url = `${ENV.API_URL}${ENV.ENDPOINTS.AUTH.LOGIN}`;
+            const url = `${ENV.API_URL_TEMPORAL}${ENV.ENDPOINTS.AUTH.LOGIN}`;
             const params = {
                 method: 'POST',
                 headers: {
@@ -39,7 +39,7 @@ export class Auth{
 
             const response = await fetch(url, params);
             const result = await response.json();
-            if(response.status != 200 ) throw result;
+            if(result.status != 200 ) throw result;
             return result;
         } catch (error) {
         console.log(error);

@@ -19,6 +19,7 @@ export async function generateMetadata(params) {
       description: responsePlatform.attributes.title,
     };
   } catch (error) {
+    console.log("error", error);
     notFound();
     return {
       title: "Plataform not Found",
@@ -30,6 +31,7 @@ async function getData(platform) {
   try {
     const platformCtrl = new Platform();
     const responsePlatform = await platformCtrl.getBySlug(platform);
+
 
     const page = 1;
     const gameCtrl = new Game();

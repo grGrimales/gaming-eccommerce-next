@@ -14,10 +14,12 @@ export async function generateMetadata(params){
   
      return {
        title: params.params.game,
-       description: responseGame.attributes.summary,
-       image: responseGame.attributes.wallpaper.data.attributes.url,
+       description: responseGame.data.attributes.summary,
+       image: responseGame.data.attributes.wallpaper.data.attributes.url,
      };
    } catch (error) {
+
+    console.log(error, 'error')
     notFound();
    }
 
@@ -28,13 +30,18 @@ async function getData(game) {
   try {
     const gameCtrl = new Game();
     const responseGame = await gameCtrl.getGamesBySlug(game.game);
+
+    console.log(responseGame.data, 'response game')
     return {
       props: {
-        game: responseGame,
+        game: responseGame.data,
+        platform: responseGame.platform
       },
     };
   } catch (error) {
+    console.log(error)
     notFound();
+
     
   }
 }
@@ -48,7 +55,7 @@ export default async function GamePage({ params, searchParams }) {
           image={data.props.game.attributes.wallpaper.data.attributes.url}
         />
 
-        <Panel gameId={data.props.game.id} game={data.props.game.attributes} />
+        <Panel gameId={data.props.game.id} game={data.props.game} platform={data.props.platform} />
 
         <Separator height={50} />
 

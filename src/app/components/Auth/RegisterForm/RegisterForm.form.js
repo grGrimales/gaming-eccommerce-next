@@ -14,6 +14,6 @@ export function validationSchema() {
         email: Yup.string().email(true).required(true),
         password: Yup.string(true).required(true),
         name: Yup.string(true).required(true),
-        username: Yup.string(true).required(true),
+        userName: Yup.string(true).required(true),
     })
 }

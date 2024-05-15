@@ -7,7 +7,7 @@ import { WishlistIcon } from "../../Shared";
 import { useCart } from "@/hooks";
 import { useState } from "react";
 
-export function Panel({ gameId, game }) {
+export function Panel({ gameId, game, platform  }) {
   const { addCart } = useCart();
 
   const [loading, setLoading] = useState(false);
@@ -25,7 +25,7 @@ export function Panel({ gameId, game }) {
   return (
     <Container className={styles.panel}>
       <div className={styles.imgContainer}>
-        <Image src={game.cover.data.attributes.url} alt="cover" />
+        <Image src={game.attributes.cover.data.attributes.url} alt="cover" />
       </div>
 
       <div className={styles.actionsContainer}>
@@ -34,11 +34,11 @@ export function Panel({ gameId, game }) {
 
           <div className={styles.moreInfo}>
             <span>
-              <Image
-                src={game.platform.data.attributes.icon.data.attributes.url}
+            <Image
+                src={platform.data.attributes.icon.data.attributes.url}
                 alt="platform"
-              />
-              {game.platform.data.title}
+              /> 
+             {platform.data.title} 
             </span>
 
             <span>
