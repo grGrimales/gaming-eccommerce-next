@@ -7,41 +7,43 @@ import { NoResult } from "../../components/Shared/NoResult/NoResult";
 import { Pagination } from "../../components/Shared/Pagination/Pagination";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata(params) {
-  try {
-    const platformCtrl = new Platform();
-    const responsePlatform = await platformCtrl.getBySlug(
-      params.params.platform
-    );
+// export async function generateMetadata(params) {
+//   try {
+//     const platformCtrl = new Platform();
+//     const responsePlatform = await platformCtrl.getBySlug(
+//       params.params.platform
+//     );
 
-    return {
-      title: params.params.platform,
-      description: responsePlatform.attributes.title,
-    };
-  } catch (error) {
-    console.log("error", error);
-    notFound();
-    return {
-      title: "Plataform not Found",
-    };
-  }
-}
+//     return {
+//       title: params.params.platform,
+//      // description: responsePlatform.data.attributes.title,
+//     };
+//   } catch (error) {
+//     console.log("error", error);
+//     notFound();
+//   }
+// }
 
 async function getData(platform) {
   try {
     const platformCtrl = new Platform();
     const responsePlatform = await platformCtrl.getBySlug(platform);
-
+    console.log("responsePlatform", responsePlatform);
 
     const page = 1;
     const gameCtrl = new Game();
     const responseGame = await gameCtrl.getGmaesByPlatformSlug(platform, page);
+    // console.log('responseGame', responseGame)
 
     return {
       props: {
         platform: responsePlatform,
         game: responseGame.data,
-        pagination: responseGame.meta.pagination,
+        pagination: {
+          page: responseGame.meta.page,
+          pageCount: responseGame.meta.totalPages,
+        },
+        //pagination: responseGame.meta.pagination,
       },
     };
   } catch (error) {

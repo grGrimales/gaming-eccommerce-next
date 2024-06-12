@@ -8,6 +8,7 @@ import { useCart } from "@/hooks";
 import { useState } from "react";
 
 export function Panel({ gameId, game, platform  }) {
+  console.log( platform)
   const { addCart } = useCart();
 
   const [loading, setLoading] = useState(false);
@@ -35,10 +36,10 @@ export function Panel({ gameId, game, platform  }) {
           <div className={styles.moreInfo}>
             <span>
             <Image
-                src={platform.data.attributes.icon.data.attributes.url}
+                src={platform.attributes.icon.data.attributes.url}
                 alt="platform"
               /> 
-             {platform.data.title} 
+             {platform.attributes.title} 
             </span>
 
             <span>

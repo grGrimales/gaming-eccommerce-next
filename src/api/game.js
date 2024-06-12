@@ -52,16 +52,14 @@ export class Game {
     }
   }
 
-  async getGmaesByPlatformSlug(platformSlug, page = 2) {
+  async getGmaesByPlatformSlug(platformSlug, page = 1) {
     try {
       const filters = `filters[platform][slug][$eq]=${platformSlug}`;
       const pagination = `pagination[page]=${page}&pagination[pageSize]=30`;
       const populate = "populate=*";
       const urlParams = `${filters}&${pagination}&${populate}`;
 
-      const url = `${ENV.API_URL_TEMPORAL}${ENV.ENDPOINTS.GAME}/${platformSlug}`;
-
-      console.log(url);
+      const url = `${ENV.API_URL_TEMPORAL}${ENV.ENDPOINTS.GAME}/${platformSlug}?page=${page}&limit=30`;
 
       const response = await fetch(url, {next: { revalidate: 10 }});
       const result = await response.json();

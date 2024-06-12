@@ -24,30 +24,17 @@ export class Platform {
 
     async getBySlug(slug) {
     try {
-        const filters = `filters[slug][$eq]=${slug}`	
 
-        //const url = `${ENV.API_URL}${ENV.ENDPOINTS.PLATFORM}?${filters}`;
-      //  const url = "http://localhost:1337/api/platforms?filters[slug][$eq]=xbox"
-      //  const response = await fetch(url);
-       // const result = await response.json();
+        const url = `${ENV.API_URL_TEMPORAL}${ENV.ENDPOINTS.PLATFORM}/${slug}`;
+       const response = await fetch(url, {next: { revalidate: 10 }});
+       const result = await response.json();
 
-       // console.log("result", result);
+       console.log({result})
 
 
-      //  if(response.status !== 200) throw result;
-      //  return  result.data[0];
-
-      return 	{
-        "id": 3,
-        "attributes": {
-            "title":slug,
-            "slug": slug.toLowerCase(),
-            "order": 2,
-            "createdAt": "2023-09-13T09:44:33.002Z",
-            "updatedAt": "2023-09-13T09:44:33.991Z",
-            "publishedAt": "2023-09-13T09:44:33.986Z"
-        }
-    }
+      if(response.status !== 200) throw result;
+       return  result.data;
+    
     } catch (error) {
         console.log('ocurrio un error...')
         console.log(error);
